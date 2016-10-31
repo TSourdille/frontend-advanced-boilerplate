@@ -1,0 +1,59 @@
+/* Card design */
+.container {
+  text-align: center;
+}
+
+.features .container .row img{
+  max-width: 130px;
+
+}
+
+.features .container .row h2{
+  margin-bottom: 12px;
+}
+
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.trip-card {
+  border-radius: 5px;
+  height: 220px;
+  width: 350px;
+  margin-bottom: 55px;
+  background-size: cover !important;
+  position: relative;
+}
+
+
+.trip-card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: #F4F4F4;
+}
+
+.trip-card-user {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.cards-row {
+  margin-top: 60px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.cards-row h2{
+  font-size: 26px;
+}
+/* Card design */
+

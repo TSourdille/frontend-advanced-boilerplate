@@ -2,9 +2,204 @@
 title: Le Wagon Middleman boilerplate
 ---
 
-<div class="welcome text-center padded">
-  <h1>Welcome to Middleman</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p>
-</div>
+<body>
+    <!-- Your banner code -->
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(winter-barn.jpg);">
+    <div class="banner-content">
+      <h1>Welcome Home</h1>
+      <p>Sweet locations, just one click away</p>
+
+      <br>
+
+      <div class="form-container">
+        <h2>Join us now and start exploring</h2>
+        <form class="form-inline" action="#">
+          <input class="form-control input-lg" placeholder="Checkin" type='text'>
+          <input class="form-control input-lg" placeholder="Checkout" type='text'>
+          <select id="" class="form-control input-lg" name="">
+            <option value= "1">1 person </option>
+            <option value= "2">2 persons </option>
+            <option value= "3">3 persons </option>
+          </select>
+          <input class="btn btn-primary btn-lg" value="Search" type='submit'>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your features code -->
+  <br>
+  <div class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "globe.png" %>
+          <h2>Discover</h2>
+          <p>Escaping never was so easy</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <!-- <img src="images/dollar.png" alt="dollar"> -->
+          <%= image_tag "dollar.png" %>
+          <h2>Pay online</h2>
+          <p>Fast, easy and secured</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <!-- <img src="images/beer.png" alt="beer"> -->
+          <%= image_tag "beer.png" %>
+          <h2>Meet up</h2>
+          <p>Anywhere, anytime</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <!-- <img src="images/heart.png" alt="heart"> -->
+          <%= image_tag "heart.png" %>
+          <h2>Share</h2>
+          <p>Dont be afraid to be corny</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="trips">
+    <div class="wrapper">
+      <div class="container">
+      <h2>Your next trip</h2>
+        <div class="row">
+          <div class="flex-row">
+
+            <div class="picbox">
+              <div class='trip-card' style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+                <div class="trip-card-category">Paris</div>
+                <%= image_tag "seb.jpg", class: "trip-card-user" %>
+              </div>
+            </div>
+
+            <div class="pic-box">
+              <div class='trip-card' style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
+                <div class="trip-card-category">Brussels</div>
+                <%= image_tag "romain.jpeg", class: "trip-card-user" %>
+              </div>
+            </div>
+
+            <div class="pic-box">
+              <div class='trip-card' style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
+                <div class="trip-card-category">London</div>
+                <%= image_tag "anne.jpeg", class: "trip-card-user" %>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div id="map" style="width: 100%; height: 400px;">
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+      var myLatlng = new google.maps.LatLng(48.8655909, 2.378983);
+
+      var myOptions = {
+        zoom: 16,
+        center: myLatlng,
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: [
+
+  {
+      "featureType": "all",
+      "elementType": "all",
+      "stylers": [
+          {
+              "hue": "#ff0000"
+          },
+          {
+              "saturation": -100
+          },
+          {
+              "lightness": -30
+          }
+      ]
+  },
+  {
+      "featureType": "all",
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#ffffff"
+          }
+      ]
+  },
+  {
+      "featureType": "all",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+          {
+              "color": "#353535"
+          }
+      ]
+  },
+  {
+      "featureType": "landscape",
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "color": "#656565"
+          }
+      ]
+  },
+  {
+      "featureType": "poi",
+      "elementType": "geometry.fill",
+      "stylers": [
+          {
+              "color": "#505050"
+          }
+      ]
+  },
+  {
+      "featureType": "poi",
+      "elementType": "geometry.stroke",
+      "stylers": [
+          {
+              "color": "#808080"
+          }
+      ]
+  },
+  {
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "color": "#454545"
+          }
+      ]
+  }
+        ] // TODO: replace [] by array from https://snazzymaps.com/
+      };
+
+      var map = new google.maps.Map(document.getElementById('map'), myOptions);
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: "You are here!"
+      });
+    </script>
+  </div>
+
+
+
+  <!-- Your newsletter code -->
+
+  <!-- Your footer code -->
+
+  <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
